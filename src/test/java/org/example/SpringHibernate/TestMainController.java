@@ -28,6 +28,8 @@ public class TestMainController {
     @Autowired
     private MainController mainController;
 
+    //testing a reflection of a username on the main page
+
     @Test
     public void mainPageTest() throws Exception{
         this.mockMvc.perform(get("/main"))
