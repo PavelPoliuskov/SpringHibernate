@@ -1,6 +1,8 @@
 
 V
-java:S4684;"@Replace this persistent entity with a simple POJO or DTO object.(ªÈ÷—
+java:S4684<"@Replace this persistent entity with a simple POJO or DTO object.(ªÈ÷—
+n
+java:S2259D"RA "NullPointerException" could be thrown; "getOriginalFilename()" can return null.(€Ÿ¹8ÁøÈ´ù.
 ;
-java:S1075O"&Remove this hard-coded path-delimiter.(ÊÂ¼T
+java:S1075S"&Remove this hard-coded path-delimiter.(ÊÂ¼T
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Òƒ¹Ýþÿÿÿÿ

@@ -29,3 +29,5 @@ w
 Gsrc/main/java/org/example/SpringHibernate/config/WebSecurityConfig.java,e\b\eb23596a1e13cb8939872fc80ec007981569da0f
 x
 Hsrc/main/java/org/example/SpringHibernate/controller/MainController.java,4\2\4210c3b6e9cabdb7717ed61cc68ea23f013f35a7
+q
+Asrc/test/java/org/example/SpringHibernate/TestMainController.java,c\2\c2cfa2a1ecc182e3529ebc01d81832c1063f80ec
