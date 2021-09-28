@@ -54,7 +54,6 @@ public class MainController {
     }
 
     //@RequestParam means it is a parameter from the GET or POST request (Spring.io)
-
     //https://spring.io/guides/gs/uploading-files/
     @PostMapping("/main")
     public String add(
