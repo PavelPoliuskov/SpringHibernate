@@ -23,6 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         @Autowired
         private MockMvc mockMvc;
 
+        //Finding text on the first page
+
         @Test
         public void contextLoads() throws Exception {
             this.mockMvc.perform(get("/"))
@@ -32,6 +34,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
                     .andExpect(content().string(containsString("Pavel Poliuskov Assignment")));
         }
 
+
+        //testing the status of the webpage
         @Test
         public void loginTest() throws Exception {
             this.mockMvc.perform(get("/"))
@@ -41,6 +45,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
         }
 
+        //performing a log in
         @Test
         public void correctLoginTest() throws Exception {
             this.mockMvc.perform(formLogin().user("u").password("1"))
@@ -49,6 +54,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
                     .andExpect(redirectedUrl("/"));
         }
 
+        //performing a log in with wrong credentials
         @Test
         public void badCredentialsTest() throws Exception {
             this.mockMvc.perform(post("/login").param("user", "wrongUserId"))

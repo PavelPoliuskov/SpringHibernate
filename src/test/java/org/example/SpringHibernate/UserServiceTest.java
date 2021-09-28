@@ -4,10 +4,13 @@ package org.example.SpringHibernate;
 import org.example.SpringHibernate.domain.Message;
 import org.example.SpringHibernate.domain.Role;
 import org.example.SpringHibernate.domain.User;
+import org.example.SpringHibernate.repos.UserRepo;
+import org.example.SpringHibernate.service.UserService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -17,6 +20,8 @@ import java.util.Collections;
 @SpringBootTest
 public class UserServiceTest {
 
+    @Autowired
+    UserRepo userRepo;
     User user = new User();
     Message message = new Message();
 
@@ -33,15 +38,19 @@ public class UserServiceTest {
         message.setFilename("filename");
     }
 
+    //testing a user
     @Test
     public void addUser(){
 
+        Assert.assertNotNull(user.getUsername());
         Assert.assertEquals(user.getUsername(), "u" );
         Assert.assertEquals(user.getPassword(), "1");
         Assert.assertEquals(user.getRoles().toString(), "[USER]");
         Assert.assertEquals(user.getId(), Long.valueOf(1));
     }
 
+
+    //testing a message
     @Test
     public void addMessage(){
 
@@ -52,5 +61,10 @@ public class UserServiceTest {
 
     }
 
-
+    //testing a connection to the DB
+    @Test
+    public void getUserByUserNameTrue () {
+        Assert.assertNull(userRepo.findByUsername("t"));
+        Assert.assertEquals(userRepo.findByUsername("u").getUsername(), "u");
+    }
 }
